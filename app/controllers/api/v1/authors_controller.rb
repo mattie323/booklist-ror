@@ -1,6 +1,4 @@
 class Api::V1::AuthorsController < Api::V1::BaseController
-  
-
   before_action :set_author, only: %i[show update destroy]
 
   api :GET, "/v1/authors", "List all authors with pagination"

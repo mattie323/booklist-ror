@@ -1,5 +1,4 @@
 class Api::V1::BooksController < Api::V1::BaseController
-
   before_action :set_book, only: %i[show update destroy]
 
   api :GET, "/v1/authors/:author_id/books", "List all books for an author with pagination"
@@ -11,7 +10,8 @@ class Api::V1::BooksController < Api::V1::BaseController
 
   def index
     @pagy, @books = pagy(Book.where(author_id: params[:author_id]), items: 5)
-    render json: { books: @books, pagy: pagy_metadata(@pagy) }, each_serializer: Api::V1::BookSerializer
+    render json:            { books: @books, pagy: pagy_metadata(@pagy) },
+           each_serializer: Api::V1::BookSerializer
   end
 
   api :GET, "/v1/books/:id", "Show a single book"
