@@ -25,7 +25,7 @@ class Api::V1::AuthorsController < Api::V1::BaseController
   api :POST, "/v1/authors", "Create a new author"
   param :author, Hash, desc: "Author information" do
     param :name, String, required: true, desc: "Name of the author"
-    param :bio, String, desc: "Biography of the author"
+    param :bio, String, required: true, desc: "Biography of the author"
   end
   returns code: 201, desc: "Created"
   returns code: 422, desc: "Unprocessable Entity"
