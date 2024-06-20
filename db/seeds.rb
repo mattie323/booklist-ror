@@ -50,13 +50,13 @@ end
 
 # Create books
 authors.each_with_index do |author, index|
-    1.upto(10) do |i|
-      author.books.create!(
-        title: "#{book_titles[index]} #{i}",
-        description: "Description of #{book_titles[index]} #{i}"
-      )
-    end
+  1.upto(10) do |i|
+    author.books.create!(
+      title: "#{book_titles[index]} #{i}",
+      description: "Description of #{book_titles[index]} #{i}"
+    )
   end
+end
 
-  puts "Created #{Author.count} authors"
-  puts "Created #{Book.count} books"
+puts "Created #{Author.count} authors"
+puts "Created #{Book.count} books"

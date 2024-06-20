@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  apipie
+
   namespace :api do
     namespace :v1 do
       resources :authors do
@@ -7,5 +9,4 @@ Rails.application.routes.draw do
       resources :books, only: [:show, :update, :destroy]
     end
   end
-  apipie
 end
